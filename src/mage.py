@@ -22,10 +22,12 @@ class Lexer:
 
         for character in line:
             buffer += character
+            if buffer == " ":
+                buffer = ""
             if buffer in keywords.keywords:
                 tokens.append(Token(TT_KEYWORD, buffer))
                 buffer = ""
-            elif character == '"' and len(buffer) > 2:
+            elif character == '"' and len(buffer) > 1:
                 tokens.append(Token(TT_STRING, buffer))
                 buffer = ""
             elif character == ';':

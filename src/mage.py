@@ -17,20 +17,23 @@ class Lexer:
         pass
     def read_file(self, file):
         tokens = []
+        line = []
 
         buffer = ""
 
-        for character in file:
+        for i, character in enumerate(file):
             buffer += character
             if buffer == " " or buffer == "\n":
                 buffer = ""
             elif buffer in keywords.keywords:
-                tokens.append(Token(TT_KEYWORD, buffer))
+                line.append(Token(TT_KEYWORD, buffer))
                 buffer = ""
             elif character == '"' and len(buffer) > 1:
-                tokens.append(Token(TT_STRING, buffer))
+                line.append(Token(TT_STRING, buffer))
                 buffer = ""
             elif character == ";":
+                tokens.append(line)
+                line = []
                 buffer = ""
         
         return tokens
@@ -39,8 +42,11 @@ class Mage:
     def __init__(self):
         self.lexer = Lexer()
     def run(self, code):
-        with open(code, 'r') as f:
-            print(self.lexer.read_file(f.read()))
+            print(self.lexer.read_file(code))
 
-mage = Mage()
-mage.run(sys.argv[1])
+# mage = Mage()
+
+# with open(sys.argv[1], "r") as f:
+    # file = f.read()
+    
+# mage.run(file)

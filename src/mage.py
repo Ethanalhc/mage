@@ -3,8 +3,10 @@ import parser
         
 class Mage:
     def __init__(self):
-        self.lexer = lexer.Lexer()
+        self.lexer = lexer.Lexer() # Creates the lexer and parser instances
         self.parser = parser.Parser()
     def run(self, code):
             tokens = self.lexer.read_file(code)
             print(self.parser.parse(tokens))
+
+            # Runs the program using the instances

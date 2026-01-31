@@ -3,7 +3,7 @@ import mage
 mage = mage.Mage()
 
 while True:
-    _ = input("> ")
+    _ = input(">> ")
 
     try:
         with open(_, "r") as f:

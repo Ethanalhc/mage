@@ -1,0 +1,4 @@
+print "Hello World";
+let name = "";
+in "What is your name?" > name;
+print "Hello `name`";

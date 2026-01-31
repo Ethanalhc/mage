@@ -2,9 +2,9 @@ import lexer
 import keywords
 
 class Node:
-    def __init__(self, opcode=None, operands=[]):
+    def __init__(self, opcode=None, operands=None):
         self.opcode = opcode
-        self.operands = operands
+        self.operands = operands or []
     def __repr__(self):
         return f"{self.opcode} : {self.operands}"
 

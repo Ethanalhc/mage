@@ -1,13 +1,16 @@
-
+import stdlib
 
 keywords = [
-    "print"
+    "print",
+    "quit"
 ]
 
 args_amount = [
-    1
+    1,
+    0
 ]
 
 functions = [
-    print
+    print,
+    stdlib.halt
 ]

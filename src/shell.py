@@ -2,7 +2,8 @@ import mage
 
 mage = mage.Mage()
 
-while True:
+running = True
+while running:
     _ = input(">> ")
 
     try:

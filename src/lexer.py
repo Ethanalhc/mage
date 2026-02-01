@@ -38,5 +38,4 @@ class Lexer:
                 line = []
                 buffer = ""
         
-        print(tokens)
         return tokens

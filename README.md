@@ -1,4 +1,4 @@
-# Mage-lang
+# Mage-lang (LEARNING EXPERIENCE, MAIN LANGUAGE PROJECT PINNED ON MY PROFILE)
 ## A mini interpreter!
 Mage is a small interpreted language built for simple syntax with only one rule: No, Brackets, Allowed!
 

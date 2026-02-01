@@ -22,14 +22,17 @@ class Lexer:
 
         buffer = "" # Buffer stores the currently stored word
 
-        for character in file:
+        for i, character in enumerate(file):
 
             buffer += character
             if buffer == " " or buffer == "\n": # Clears whitespace
                 buffer = ""
-            elif buffer in keywords.keywords: # Checks for keywords
+            elif buffer in keywords.keywords and len(file) > i+1 and not file[i+1].isalnum(): # Checks for keywords
                 line.append(Token(TT_KEYWORD, buffer))
                 buffer = ""
+            elif buffer[:-1].isalnum() and character in " ;":
+                print(buffer[:-1] + " is not defined.")
+                break
             elif character == '"' and len(buffer) > 1: # Checks for strings
                 line.append(Token(TT_STRING, buffer.strip('"')))
                 buffer = ""
@@ -38,4 +41,9 @@ class Lexer:
                 line = []
                 buffer = ""
         
+        if len(tokens) == 0:
+            if len(file) > 0:
+                print("Remember semicolons at the end of lines.")
+            else:
+                print("Write something!")
         return tokens

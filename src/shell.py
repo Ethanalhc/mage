@@ -2,8 +2,13 @@ import mage
 
 mage = mage.Mage()
 
-running = True
-while running:
+print("--~                                                  ~--")
+print("                 Welcome to Mage v0.1.3                 ")
+print("                  Mage is in PRE-ALPHA                  ")
+print("Error Handling is not set up, expect poor error phrasing")
+print("--~                                                  ~--")
+
+while True:
     _ = input(">> ")
 
     try:

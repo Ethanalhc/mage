@@ -30,7 +30,7 @@ class Lexer:
                 line.append(Token(TT_KEYWORD, buffer))
                 buffer = ""
             elif character == '"' and len(buffer) > 1: # Checks for strings
-                line.append(Token(TT_STRING, buffer))
+                line.append(Token(TT_STRING, buffer.strip('"')))
                 buffer = ""
             elif character == ";": # Makes ";" finish a line
                 tokens.append(line)

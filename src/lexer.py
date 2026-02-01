@@ -23,6 +23,7 @@ class Lexer:
         buffer = "" # Buffer stores the currently stored word
 
         for character in file:
+
             buffer += character
             if buffer == " " or buffer == "\n": # Clears whitespace
                 buffer = ""
@@ -37,4 +38,5 @@ class Lexer:
                 line = []
                 buffer = ""
         
+        print(tokens)
         return tokens

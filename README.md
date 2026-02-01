@@ -17,7 +17,9 @@ Mage is a small interpreted language built for simple syntax with only one rule:
 5. Open the folder in command line
 6. Open the shell environment: 
 
-```python src/shell.py```
+```
+python src/shell.py
+```
 
 # Find a bug?
 Feel free to open an [issue](https://github.com/Ethanalhc/mage/issues).
